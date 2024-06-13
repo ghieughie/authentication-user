@@ -205,11 +205,9 @@ const goTo = (page) => {
   }
 };
 const signOut = () => {
+  router.push({ name: "login" });
   eraseCookie("user");
   eraseCookie("token");
-  setInterval(() => {
-    router.push({ name: "login" });
-  }, 500);
 };
 const validateCookies = () => {
   const auth = getCookie("token");
